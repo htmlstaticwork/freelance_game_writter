@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
     <style>
         /* Project Details specific styles */
         .project-hero {
@@ -82,12 +83,7 @@
     <header class="sticky-top bg-white">
         <nav class="navbar navbar-expand-custom container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
-                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
-                </svg>
-                <span>Inkwell</span>
+                <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="brand-lockup">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
@@ -137,9 +133,9 @@
     <!-- Section 1: Project Hero -->
     <section class="project-hero text-center">
         <div class="container">
-            <h1 class="mb-3">Aether's Fall</h1>
-            <p class="text-uppercase tracking-widest text-accent mb-2">Epic Fantasy RPG</p>
-            <p class="lead">Lead Narrative Designer @ Ironbound Interactive</p>
+            <h1 id="project-title" class="mb-3">Aether's Fall</h1>
+            <p id="project-genre" class="text-uppercase tracking-widest text-accent mb-2">Epic Fantasy RPG</p>
+            <p id="project-role" class="lead">Lead Narrative Designer @ Ironbound Interactive</p>
         </div>
     </section>
 
@@ -148,11 +144,11 @@
         <div class="row g-5">
             <div class="col-md-6">
                 <h2 class="mb-4">The Challenge</h2>
-                <p>The client needed a narrative system that could support 40+ hours of gameplay while maintaining consistent character arcs across hundreds of player choices. The world required a deep sense of history and factional conflict that felt systemic rather than scripted.</p>
+                <p id="project-challenge">The client needed a narrative system that could support 40+ hours of gameplay while maintaining consistent character arcs across hundreds of player choices. The world required a deep sense of history and factional conflict that felt systemic rather than scripted.</p>
             </div>
             <div class="col-md-6">
                 <h2 class="mb-4">The Solution</h2>
-                <p>I architected a modular branching system where player choices were tracked across three main narrative pillars: Morality, Faction Loyalty, and Personal Relationships. This allowed for dynamic dialogue barks and quest variations that felt tailored to each player's unique journey.</p>
+                <p id="project-solution">I architected a modular branching system where player choices were tracked across three main narrative pillars: Morality, Faction Loyalty, and Personal Relationships. This allowed for dynamic dialogue barks and quest variations that felt tailored to each player's unique journey.</p>
             </div>
         </div>
     </section>
@@ -162,11 +158,11 @@
         <div class="container">
             <h2>Narrative Systems</h2>
             <div class="system-diagram mx-auto text-center" style="max-width: 800px;">
-                <div class="node">Choice A</div>
-                <div class="node">Consequence X</div>
-                <div class="node">New Dialogue Node</div>
-                <div class="node">Quest Outcome</div>
-                <p class="mt-4 small text-muted">A simplified visualization of the branching logic used in the main campaign.</p>
+                <div id="system-node-1" class="node">Choice A</div>
+                <div id="system-node-2" class="node">Consequence X</div>
+                <div id="system-node-3" class="node">New Dialogue Node</div>
+                <div id="system-node-4" class="node">Quest Outcome</div>
+                <p id="system-caption" class="mt-4 small text-muted">A simplified visualization of the branching logic used in the main campaign.</p>
             </div>
         </div>
     </section>
@@ -175,10 +171,10 @@
     <section class="container">
         <h2>Gallery & Artifacts</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">Lore Bible Map Excerpt</div>
-            <div class="gallery-item">Dialogue Script Snippet</div>
-            <div class="gallery-item">Quest Flow Chart</div>
-            <div class="gallery-item">Character Design Sheet</div>
+            <div id="gallery-item-1" class="gallery-item">Lore Bible Map Excerpt</div>
+            <div id="gallery-item-2" class="gallery-item">Dialogue Script Snippet</div>
+            <div id="gallery-item-3" class="gallery-item">Quest Flow Chart</div>
+            <div id="gallery-item-4" class="gallery-item">Character Design Sheet</div>
         </div>
     </section>
 
@@ -187,7 +183,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
-                    <span class="footer-logo">Inkwell</span>
+                    <div class="footer-brand">
+                        <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="footer-logo-img">
+                    </div>
                     <div class="d-flex gap-3">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>

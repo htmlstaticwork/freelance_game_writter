@@ -87,6 +87,7 @@
             border: 1px solid #EEE;
             transition: 0.3s;
             background: #FFF;
+            text-align: center;
         }
 
         .toolkit-item:hover {
@@ -94,11 +95,21 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
+        .toolkit-item-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
         .toolkit-icon {
             font-size: 2.5rem;
             color: var(--accent-amber);
-            margin-bottom: 20px;
-            display: block;
+            margin-bottom: 0;
+            display: inline-flex;
+            flex: 0 0 auto;
+            line-height: 1;
         }
 
         .origins-content {
@@ -114,6 +125,12 @@
             border-color: #444;
             color: #FFF;
         }
+
+        @media (max-width: 575px) {
+            .toolkit-item-header {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -122,12 +139,7 @@
     <header class="sticky-top bg-white">
         <nav class="navbar navbar-expand-custom container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
-                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
-                </svg>
-                <span>Inkwell</span>
+                <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="brand-lockup">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
@@ -203,22 +215,28 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="toolkit-item h-100">
-                    <i class="bi bi-diagram-3 toolkit-icon"></i>
-                    <h4>Branching Prototyping</h4>
+                    <div class="toolkit-item-header">
+                        <i class="bi bi-diagram-3 toolkit-icon"></i>
+                        <h4 class="mb-0">Branching Prototyping</h4>
+                    </div>
                     <p>Rapidly prototyping complex choice-driven narratives in Twine and Ink to test player agency and thematic consistency before full production.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="toolkit-item h-100">
-                    <i class="bi bi-database toolkit-icon"></i>
-                    <h4>Lore Systems Design</h4>
+                    <div class="toolkit-item-header">
+                        <i class="bi bi-database toolkit-icon"></i>
+                        <h4 class="mb-0">Lore Systems Design</h4>
+                    </div>
                     <p>Architecting comprehensive lore databases in Articy:Draft, establishing searchable foundations for factions, geography, and world history.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="toolkit-item h-100">
-                    <i class="bi bi-code-square toolkit-icon"></i>
-                    <h4>Scripting Integration</h4>
+                    <div class="toolkit-item-header">
+                        <i class="bi bi-code-square toolkit-icon"></i>
+                        <h4 class="mb-0">Scripting Integration</h4>
+                    </div>
                     <p>Working directly within Unreal and Unity engines to implement narrative systems, from simple dialogue triggers to complex quest state logic.</p>
                 </div>
             </div>
@@ -288,7 +306,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
-                    <span class="footer-logo">Inkwell</span>
+                    <div class="footer-brand">
+                        <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="footer-logo-img">
+                    </div>
                     <div class="d-flex gap-3">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>

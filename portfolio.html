@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
     <style>
         /* Portfolio-specific styles */
         .project-thumbnail {
@@ -99,12 +100,7 @@
     <header class="sticky-top bg-white">
         <nav class="navbar navbar-expand-custom container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
-                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
-                </svg>
-                <span>Inkwell</span>
+                <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="brand-lockup">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
@@ -156,7 +152,7 @@
         <h2>The Archive</h2>
         <div class="row g-4">
             <div class="col-md-6">
-                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                <a href="project-details.html?project=aether" class="project-thumbnail text-decoration-none">
                     <div class="p-4">
                         <h3>Aether's Fall</h3>
                         <p class="text-uppercase small tracking-widest">Epic Fantasy RPG</p>
@@ -169,7 +165,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                <a href="project-details.html?project=neon" class="project-thumbnail text-decoration-none">
                     <div class="p-4">
                         <h3>Neon Syndicate</h3>
                         <p class="text-uppercase small tracking-widest">Cyberpunk Narrative Sim</p>
@@ -182,7 +178,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                <a href="project-details.html?project=echoes" class="project-thumbnail text-decoration-none">
                     <div class="p-4">
                         <h3>Echoes of Eldoria</h3>
                         <p class="text-uppercase small tracking-widest">Tactical Strategy</p>
@@ -195,7 +191,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                <a href="project-details.html?project=breach" class="project-thumbnail text-decoration-none">
                     <div class="p-4">
                         <h3>The Final Breach</h3>
                         <p class="text-uppercase small tracking-widest">Sci-Fi Horror</p>
@@ -260,7 +256,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
-                    <span class="footer-logo">Inkwell</span>
+                    <div class="footer-brand">
+                        <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="footer-logo-img">
+                    </div>
                     <div class="d-flex gap-3">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>

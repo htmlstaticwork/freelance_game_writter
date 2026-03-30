@@ -23,6 +23,7 @@
             position: relative;
             overflow: hidden;
             background: var(--primary-white);
+            text-align: center;
         }
 
         .service-card:hover {
@@ -30,15 +31,31 @@
             transform: translateY(-10px);
         }
 
+        .service-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
         .service-icon {
             font-size: 3rem;
             color: var(--accent-amber);
-            margin-bottom: 20px;
-            display: block;
+            margin-bottom: 0;
+            display: inline-flex;
+            flex: 0 0 auto;
+            line-height: 1;
         }
 
         .service-card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 575px) {
+            .service-card-header {
+                flex-direction: column;
+            }
         }
 
         .comparison-table {
@@ -92,12 +109,7 @@
     <header class="sticky-top bg-white">
         <nav class="navbar navbar-expand-custom container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
-                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
-                </svg>
-                <span>Inkwell</span>
+                <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="brand-lockup">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
@@ -150,43 +162,55 @@
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="service-card">
-                    <i class="bi bi-chat-dots-fill service-icon"></i>
-                    <h3>Branching Dialogue</h3>
+                    <div class="service-card-header">
+                        <i class="bi bi-chat-dots-fill service-icon"></i>
+                        <h3>Branching Dialogue</h3>
+                    </div>
                     <p>Designing complex dialogue systems that react to player choice, reputation, and inventory. Delivered in Twine, Ink, or custom formats.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <i class="bi bi-book-half service-icon"></i>
-                    <h3>Lore Bible Creation</h3>
+                    <div class="service-card-header">
+                        <i class="bi bi-book-half service-icon"></i>
+                        <h3>Lore Bible Creation</h3>
+                    </div>
                     <p>Building comprehensive world foundations. Factions, timelines, mythologies, and cultural nuances established in a searchable database.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <i class="bi bi-person-badge-fill service-icon"></i>
-                    <h3>Character Arc Design</h3>
+                    <div class="service-card-header">
+                        <i class="bi bi-person-badge-fill service-icon"></i>
+                        <h3>Character Arc Design</h3>
+                    </div>
                     <p>Developing character profiles, motivations, and growth trajectories. Includes unique voice tone guides and dialogue samples.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <i class="bi bi-megaphone-fill service-icon"></i>
-                    <h3>In-Game Barks</h3>
+                    <div class="service-card-header">
+                        <i class="bi bi-megaphone-fill service-icon"></i>
+                        <h3>In-Game Barks</h3>
+                    </div>
                     <p>Writing systemic combat and environmental barks that breathe life into NPCs without repetitive fatigue.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <i class="bi bi-compass-fill service-icon"></i>
-                    <h3>Quest Design</h3>
+                    <div class="service-card-header">
+                        <i class="bi bi-compass-fill service-icon"></i>
+                        <h3>Quest Design</h3>
+                    </div>
                     <p>Creating quest structures that balance narrative flow with mechanical goals. From main campaigns to emergent side quests.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <i class="bi bi-headset-vr service-icon"></i>
-                    <h3>World-Building Consultation</h3>
+                    <div class="service-card-header">
+                        <i class="bi bi-headset-vr service-icon"></i>
+                        <h3>World-Building Consultation</h3>
+                    </div>
                     <p>High-level narrative strategy for early-stage projects. Refining core themes and establishing narrative pillars.</p>
                 </div>
             </div>
@@ -243,7 +267,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
-                    <span class="footer-logo">Inkwell</span>
+                    <div class="footer-brand">
+                        <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="footer-logo-img">
+                    </div>
                     <div class="d-flex gap-3">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>

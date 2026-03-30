@@ -19,9 +19,14 @@
     margin-left: 1rem;
 }
 
+[dir="rtl"] .navbar-brand .me-2 {
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
+}
+
 [dir="rtl"] .navbar-toggler {
     margin-left: 0;
-    margin-right: auto;
+    margin-right: 0;
 }
 
 [dir="rtl"] .nav-link {
@@ -30,6 +35,19 @@
 
 [dir="rtl"] .footer-logo {
     text-align: right;
+}
+
+[dir="rtl"] footer h1,
+[dir="rtl"] footer h2,
+[dir="rtl"] footer h3,
+[dir="rtl"] footer h4,
+[dir="rtl"] footer h5,
+[dir="rtl"] footer h6 {
+    text-align: right;
+}
+
+[dir="rtl"] .footer-brand {
+    flex-direction: row-reverse;
 }
 
 [dir="rtl"] .text-start {

@@ -55,27 +55,113 @@
             margin-bottom: 30px;
         }
 
-        .case-study-carousel {
+        .hero-cta {
             display: flex;
-            gap: 30px;
-            overflow-x: auto;
-            padding: 40px 0;
-            scrollbar-width: none;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
-        .case-study-carousel::-webkit-scrollbar { display: none; }
+        .hero-cta .btn {
+            min-width: 220px;
+        }
 
-        .case-study-card {
-            flex: 0 0 clamp(300px, 40vw, 550px);
-            background: var(--primary-white);
+        .case-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .case-nav .nav-link {
+            text-align: left;
+            padding: 18px 18px;
             border: 2px solid var(--primary-black);
-            padding: clamp(20px, 4vw, 50px);
-            transition: 0.3s;
+            background: #FFF;
+            color: var(--primary-black);
+            border-radius: 0;
+            transition: 0.25s;
+            position: relative;
         }
 
-        .case-study-card:hover {
+        .case-nav .nav-link:hover {
             border-color: var(--accent-amber);
-            transform: scale(1.02);
+            transform: translateY(-2px);
+        }
+
+        .case-nav .nav-link.active {
+            background: var(--primary-black);
+            border-color: var(--primary-black);
+            color: #FFF;
+        }
+
+        .case-nav-title {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
+
+        .case-nav-subtitle {
+            display: block;
+            font-size: 0.85rem;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .case-panel {
+            background: #FFF;
+            border: 2px solid var(--primary-black);
+            padding: clamp(20px, 4vw, 44px);
+            display: flex;
+            flex-direction: column;
+            min-height: 520px;
+        }
+
+        .case-actions {
+            margin-top: auto;
+            padding-top: 18px;
+        }
+
+        .case-metrics {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .case-metric {
+            border: 1px solid #EEE;
+            padding: 10px 14px;
+            min-width: 120px;
+            background: #FFF;
+            flex: 1 1 140px;
+        }
+
+        .case-metric-value {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            line-height: 1.2;
+        }
+
+        .case-metric-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            opacity: 0.75;
+        }
+
+        .case-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .case-step {
+            border: 1px solid #EEE;
+            padding: 18px;
+            background: #FFF;
         }
 
         .step-label {
@@ -87,23 +173,87 @@
             display: block;
         }
 
-        .world-building-grid {
+        .blueprint-steps {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
         }
 
-        .wb-item {
-            padding: 40px;
-            border: 1px solid #EEE;
+        .blueprint-step {
             background: #FFF;
+            border: 2px solid var(--primary-black);
+            padding: 28px;
             transition: 0.3s;
+            position: relative;
+            min-height: 220px;
         }
 
-        .wb-item:hover {
-            background: var(--primary-black);
+        .blueprint-step:hover {
+            border-color: var(--accent-amber);
+            transform: translateY(-6px);
+        }
+
+        .blueprint-step-number {
+            position: absolute;
+            top: -18px;
+            left: 18px;
+            width: 42px;
+            height: 42px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-amber);
             color: #FFF;
-            border-color: var(--primary-black);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            border: 2px solid var(--primary-black);
+        }
+
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        .toolkit-card {
+            grid-column: span 6;
+            background: #FFF;
+            border: 1px solid #EEE;
+            padding: 28px;
+            transition: 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .toolkit-actions {
+            margin-top: auto;
+            padding-top: 16px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .toolkit-actions .btn {
+            width: fit-content;
+        }
+
+        .toolkit-icon {
+            display: block;
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+
+        .toolkit-card p {
+            max-width: 42ch;
+        }
+
+        .toolkit-card:hover {
+            border-color: var(--accent-amber);
+            transform: translateY(-6px);
         }
 
         .voice-gallery {
@@ -137,21 +287,97 @@
             margin-bottom: 40px;
         }
 
-        body.dark-mode .case-study-card {
+        body.dark-mode .case-nav .nav-link {
             background: #2A2A2A;
             border-color: #444;
             color: #FFF;
         }
 
-        body.dark-mode .wb-item {
+        body.dark-mode .case-nav .nav-link.active {
+            background: #FFF;
+            border-color: #FFF;
+            color: #000;
+        }
+
+        body.dark-mode .case-panel,
+        body.dark-mode .case-metric,
+        body.dark-mode .case-step {
             background: #2A2A2A;
             border-color: #444;
             color: #FFF;
         }
 
-        body.dark-mode .wb-item:hover {
+        body.dark-mode .case-panel .text-muted {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        body.dark-mode .blueprint-step,
+        body.dark-mode .toolkit-card {
+            background: #2A2A2A;
+            border-color: #444;
+            color: #FFF;
+        }
+
+        body.dark-mode .blueprint-step:hover,
+        body.dark-mode .toolkit-card:hover {
             background: #FFF;
             color: #000;
+        }
+
+        @media (max-width: 991px) {
+            .blueprint-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-nav {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-nav .nav-link {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .blueprint-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .toolkit-card {
+                grid-column: span 12;
+            }
+
+            .case-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .case-actions {
+                flex-direction: column;
+            }
+
+            .case-actions .btn {
+                width: 100%;
+            }
+
+            .toolkit-actions .btn {
+                width: 100%;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .case-nav {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -161,12 +387,7 @@
     <header class="sticky-top bg-white">
         <nav class="navbar navbar-expand-custom container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
-                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
-                </svg>
-                <span>Inkwell</span>
+                <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="brand-lockup">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
@@ -219,95 +440,317 @@
             <p class="hero-tagline">Narrative Architecture</p>
             <h1 class="hero-title">World-Building for the Digital Age.</h1>
             <p class="lead mb-5">I don't just write scripts; I build the logic, lore, and systems that make stories interactive.</p>
-            <div class="d-flex justify-content-center gap-4">
+            <div class="hero-cta">
                 <a href="portfolio.html" class="btn btn-primary px-5 py-3">View My Work</a>
                 <a href="contact.html" class="btn btn-secondary px-5 py-3" style="border-color: #FFF; color: #FFF;">Hire Me</a>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Case Study Carousel -->
-    <section class="container">
-        <h2 class="mb-5">Case Studies: Problem & Solution</h2>
-        <div class="case-study-carousel">
-            <div class="case-study-card">
-                <h3>Aether's Fall: Branching Consequence</h3>
-                <div class="mt-4">
-                    <span class="step-label">The Problem</span>
-                    <p>Linear quests were breaking immersion in a 40-hour open world.</p>
-                </div>
-                <div class="mt-3">
-                    <span class="step-label">The Approach</span>
-                    <p>Designed a 3-pillar tracking system (Morality, Loyalty, History).</p>
-                </div>
-                <div class="mt-3">
-                    <span class="step-label">The Solution</span>
-                    <p>Dynamic barks and quest variations that react to every player action.</p>
-                </div>
-            </div>
-            <div class="case-study-card">
-                <h3>Neon Syndicate: Character Depth</h3>
-                <div class="mt-4">
-                    <span class="step-label">The Problem</span>
-                    <p>NPCs felt like quest dispensers rather than living inhabitants.</p>
-                </div>
-                <div class="mt-3">
-                    <span class="step-label">The Approach</span>
-                    <p>Created unique voice tone guides and relationship-based dialogue trees.</p>
-                </div>
-                <div class="mt-3">
-                    <span class="step-label">The Solution</span>
-                    <p>Characters that remember previous interactions and adjust their attitude.</p>
-                </div>
-            </div>
-            <div class="case-study-card">
-                <h3>Echoes of Eldoria: Lore Logic</h3>
-                <div class="mt-4">
-                    <span class="step-label">The Problem</span>
-                    <p>A fragmented world history leading to narrative contradictions.</p>
-                </div>
-                <div class="mt-3">
-                    <span class="step-label">The Approach</span>
-                    <p>Built a 500-page searchable Lore Bible establishment timelines.</p>
-                </div>
-                <div class="mt-3">
-                    <span class="step-label">The Solution</span>
-                    <p>A consistent, logic-driven universe that supports multi-year development.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: World-Building Systems -->
-    <section class="bg-light">
+    <!-- Section 2: Narrative Blueprint -->
+    <section class="bg-light py-5">
         <div class="container">
-            <h2>Narrative Systems Design</h2>
-            <div class="world-building-grid">
-                <div class="wb-item">
-                    <i class="bi bi-diagram-3 fs-1 mb-4 d-block text-accent"></i>
-                    <h4>Lore Architecture</h4>
-                    <p>Establishing the fundamental laws, mythologies, and factions of your universe.</p>
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Narrative Blueprint</h2>
+                    <p class="lead mb-0">A clear, repeatable pipeline that turns a premise into playable story systems.</p>
                 </div>
-                <div class="wb-item">
-                    <i class="bi bi-chat-left-dots fs-1 mb-4 d-block text-accent"></i>
-                    <h4>Dialogue Trees</h4>
-                    <p>Building reactive, branching conversation systems with meaningful player choice.</p>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="services.html" class="btn btn-outline-dark">See Engagement Models</a>
                 </div>
-                <div class="wb-item">
-                    <i class="bi bi-person-lines-fill fs-1 mb-4 d-block text-accent"></i>
-                    <h4>Character Design</h4>
-                    <p>Designing playable personalities with unique backstories and growth arcs.</p>
+            </div>
+            <div class="blueprint-steps">
+                <div class="blueprint-step">
+                    <div class="blueprint-step-number">01</div>
+                    <h3 class="h4 mt-4">Discovery</h3>
+                    <p class="mb-0">Theme, audience, tone pillars, and narrative constraints aligned with your design goals.</p>
                 </div>
-                <div class="wb-item">
-                    <i class="bi bi-map fs-1 mb-4 d-block text-accent"></i>
-                    <h4>Environmental Storytelling</h4>
-                    <p>Telling stories through the world itself—item descriptions, layout, and visual cues.</p>
+                <div class="blueprint-step">
+                    <div class="blueprint-step-number">02</div>
+                    <h3 class="h4 mt-4">Systems</h3>
+                    <p class="mb-0">Factions, reputation, flags, and consequence rules mapped into a readable logic model.</p>
+                </div>
+                <div class="blueprint-step">
+                    <div class="blueprint-step-number">03</div>
+                    <h3 class="h4 mt-4">Writing</h3>
+                    <p class="mb-0">Dialogue, barks, item text, and quest beats authored to support branching and pacing.</p>
+                </div>
+                <div class="blueprint-step">
+                    <div class="blueprint-step-number">04</div>
+                    <h3 class="h4 mt-4">Integration</h3>
+                    <p class="mb-0">Implementation notes, edge-cases, and polish passes that keep story stable in production.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Character Voice Gallery -->
+    <!-- Section 3: Case Studies -->
+    <section class="container py-5">
+        <div class="row align-items-end mb-4">
+            <div class="col-lg-8">
+                <h2 class="mb-2">Case Studies</h2>
+                <p class="lead mb-0">Select a project to see the problem, the approach, and the shipped solution.</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+                <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-start">
+            <div class="col-lg-4">
+                <div class="nav flex-lg-column nav-pills case-nav" id="case-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="case-aether-tab" data-bs-toggle="pill" data-bs-target="#case-aether" type="button" role="tab" aria-controls="case-aether" aria-selected="true">
+                        <span class="case-nav-title">Aether's Fall</span>
+                        <span class="case-nav-subtitle">Branching consequence</span>
+                    </button>
+                    <button class="nav-link" id="case-neon-tab" data-bs-toggle="pill" data-bs-target="#case-neon" type="button" role="tab" aria-controls="case-neon" aria-selected="false">
+                        <span class="case-nav-title">Neon Syndicate</span>
+                        <span class="case-nav-subtitle">Character depth</span>
+                    </button>
+                    <button class="nav-link" id="case-echoes-tab" data-bs-toggle="pill" data-bs-target="#case-echoes" type="button" role="tab" aria-controls="case-echoes" aria-selected="false">
+                        <span class="case-nav-title">Echoes of Eldoria</span>
+                        <span class="case-nav-subtitle">Lore logic</span>
+                    </button>
+                    <button class="nav-link" id="case-starfall-tab" data-bs-toggle="pill" data-bs-target="#case-starfall" type="button" role="tab" aria-controls="case-starfall" aria-selected="false">
+                        <span class="case-nav-title">Starfall Station</span>
+                        <span class="case-nav-subtitle">Live-ops seasons</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="tab-content" id="case-tabContent">
+                    <div class="tab-pane fade show active" id="case-aether" role="tabpanel" aria-labelledby="case-aether-tab" tabindex="0">
+                        <div class="case-panel">
+                            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+                                <div>
+                                    <h3 class="mb-1">Aether's Fall</h3>
+                                    <p class="text-muted mb-0">Epic fantasy RPG narrative systems</p>
+                                </div>
+                                <div class="case-metrics">
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">3</div>
+                                        <div class="case-metric-label">Pillars</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">40h</div>
+                                        <div class="case-metric-label">Campaign</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Reactive</div>
+                                        <div class="case-metric-label">Quests</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="case-steps">
+                                <div class="case-step">
+                                    <span class="step-label">The Problem</span>
+                                    <p class="mb-0">Linear quests were breaking immersion in a 40-hour open world.</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Approach</span>
+                                    <p class="mb-0">Designed a 3-pillar tracking system (Morality, Loyalty, History).</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Solution</span>
+                                    <p class="mb-0">Dynamic barks and quest variations that react to every player action.</p>
+                                </div>
+                            </div>
+
+                            <div class="case-actions d-flex flex-wrap gap-3">
+                                <a href="project-details.html?project=aether" class="btn btn-outline-dark">Read the Case Study</a>
+                                <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="case-neon" role="tabpanel" aria-labelledby="case-neon-tab" tabindex="0">
+                        <div class="case-panel">
+                            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+                                <div>
+                                    <h3 class="mb-1">Neon Syndicate</h3>
+                                    <p class="text-muted mb-0">Cyberpunk character writing & dialogue</p>
+                                </div>
+                                <div class="case-metrics">
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Voice</div>
+                                        <div class="case-metric-label">Guides</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Rel.</div>
+                                        <div class="case-metric-label">States</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Memory</div>
+                                        <div class="case-metric-label">Callbacks</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="case-steps">
+                                <div class="case-step">
+                                    <span class="step-label">The Problem</span>
+                                    <p class="mb-0">NPCs felt like quest dispensers rather than living inhabitants.</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Approach</span>
+                                    <p class="mb-0">Created unique voice tone guides and relationship-based dialogue trees.</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Solution</span>
+                                    <p class="mb-0">Characters that remember previous interactions and adjust their attitude.</p>
+                                </div>
+                            </div>
+
+                            <div class="case-actions d-flex flex-wrap gap-3">
+                                <a href="project-details.html?project=neon" class="btn btn-outline-dark">Read the Case Study</a>
+                                <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="case-echoes" role="tabpanel" aria-labelledby="case-echoes-tab" tabindex="0">
+                        <div class="case-panel">
+                            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+                                <div>
+                                    <h3 class="mb-1">Echoes of Eldoria</h3>
+                                    <p class="text-muted mb-0">World-building canon & timeline design</p>
+                                </div>
+                                <div class="case-metrics">
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Canon</div>
+                                        <div class="case-metric-label">Locks</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Timeline</div>
+                                        <div class="case-metric-label">Map</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Consistent</div>
+                                        <div class="case-metric-label">Lore</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="case-steps">
+                                <div class="case-step">
+                                    <span class="step-label">The Problem</span>
+                                    <p class="mb-0">A fragmented world history leading to narrative contradictions.</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Approach</span>
+                                    <p class="mb-0">Built a searchable lore bible with timeline rules and canon constraints.</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Solution</span>
+                                    <p class="mb-0">A consistent, logic-driven universe that supports multi-year development.</p>
+                                </div>
+                            </div>
+
+                            <div class="case-actions d-flex flex-wrap gap-3">
+                                <a href="project-details.html?project=echoes" class="btn btn-outline-dark">Read the Case Study</a>
+                                <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="case-starfall" role="tabpanel" aria-labelledby="case-starfall-tab" tabindex="0">
+                        <div class="case-panel">
+                            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+                                <div>
+                                    <h3 class="mb-1">Starfall Station</h3>
+                                    <p class="text-muted mb-0">Sci-fi live-ops narrative for seasonal content</p>
+                                </div>
+                                <div class="case-metrics">
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Seasons</div>
+                                        <div class="case-metric-label">Arcs</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Barks</div>
+                                        <div class="case-metric-label">Reactive</div>
+                                    </div>
+                                    <div class="case-metric">
+                                        <div class="case-metric-value">Hub</div>
+                                        <div class="case-metric-label">Updates</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="case-steps">
+                                <div class="case-step">
+                                    <span class="step-label">The Problem</span>
+                                    <p class="mb-0">Seasonal updates shipped fast, but story continuity kept breaking between patches.</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Approach</span>
+                                    <p class="mb-0">Created a modular season framework with reusable beats, state rules, and recap payloads.</p>
+                                </div>
+                                <div class="case-step">
+                                    <span class="step-label">The Solution</span>
+                                    <p class="mb-0">A live narrative that stays coherent across updates while still reacting to player progress.</p>
+                                </div>
+                            </div>
+
+                            <div class="case-actions d-flex flex-wrap gap-3">
+                                <a href="project-details.html?project=starfall" class="btn btn-outline-dark">Read the Case Study</a>
+                                <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Narrative Toolkit -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-8">
+                    <h2 class="mb-3">Narrative Toolkit</h2>
+                    <p class="lead mb-0">Practical deliverables that teams can ship with—designed to plug into production.</p>
+                </div>
+            </div>
+            <div class="toolkit-grid">
+                <div class="toolkit-card">
+                    <i class="bi bi-book fs-1 text-accent toolkit-icon"></i>
+                    <h3 class="h4 mb-2">Lore Bible</h3>
+                    <p class="mb-3">Rules, factions, timeline, and canon locks that prevent contradictions across seasons.</p>
+                    <div class="toolkit-actions">
+                        <a href="contact.html" class="btn btn-outline-dark btn-sm">Request a Sample</a>
+                    </div>
+                </div>
+                <div class="toolkit-card">
+                    <i class="bi bi-diagram-3 fs-1 text-accent toolkit-icon"></i>
+                    <h3 class="h4 mb-2">Quest Logic</h3>
+                    <p class="mb-3">Flags, dependencies, and fail-states written like engineering specs—not vague beats.</p>
+                    <div class="toolkit-actions">
+                        <a href="portfolio.html" class="btn btn-outline-dark btn-sm">See Case Studies</a>
+                    </div>
+                </div>
+                <div class="toolkit-card">
+                    <i class="bi bi-chat-left-text fs-1 text-accent toolkit-icon"></i>
+                    <h3 class="h4 mb-2">Dialogue Trees</h3>
+                    <p class="mb-3">Branching conversations built around player intent, relationship shifts, and pacing.</p>
+                    <div class="toolkit-actions">
+                        <a href="services.html" class="btn btn-outline-dark btn-sm">How I Work</a>
+                    </div>
+                </div>
+                <div class="toolkit-card">
+                    <i class="bi bi-person-lines-fill fs-1 text-accent toolkit-icon"></i>
+                    <h3 class="h4 mb-2">Voice Guides</h3>
+                    <p class="mb-3">Tone rules, vocabulary, and character do/don’t lists that keep writing consistent.</p>
+                    <div class="toolkit-actions">
+                        <a href="contact.html" class="btn btn-outline-dark btn-sm">Start a Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Character Voice Gallery -->
     <section class="voice-gallery text-fixed-white">
         <div class="container">
             <h2>Character Voice Tone Samples</h2>
@@ -343,7 +786,7 @@
         </div>
     </section>
 
-    <!-- Section 5: Conversion CTA -->
+    <!-- Section 6: Conversion CTA -->
     <section class="conversion-cta text-fixed-white">
         <div class="container">
             <h2 class="mb-4">Ready to Build Your World?</h2>
@@ -357,7 +800,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
-                    <span class="footer-logo">Inkwell</span>
+                    <div class="footer-brand">
+                        <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="footer-logo-img">
+                    </div>
                     <div class="d-flex gap-3">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>

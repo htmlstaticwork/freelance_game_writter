@@ -38,6 +38,13 @@ body.dark-mode .navbar-toggler-icon {
     filter: invert(1);
 }
 
+body.dark-mode #theme-toggle,
+body.dark-mode #rtl-toggle {
+    background-color: var(--accent-amber);
+    border: none;
+    color: #FFF;
+}
+
 body.dark-mode a:hover {
     color: var(--accent-amber);
 }

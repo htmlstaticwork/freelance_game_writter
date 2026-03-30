@@ -143,6 +143,35 @@
             z-index: 10;
             transform: scale(1.1) rotate(0deg) translateY(-20px);
         }
+
+        @media (max-width: 500px) {
+            .testimonial-letters {
+                height: auto;
+                justify-content: flex-start;
+                align-items: stretch;
+                flex-direction: column;
+                gap: 16px;
+                padding: 0 10px;
+            }
+
+            .testimonial-letters .letter {
+                position: relative;
+                width: 100%;
+                padding: 20px;
+                transform: none !important;
+            }
+
+            .testimonial-letters .letter:hover {
+                transform: none !important;
+            }
+
+            .testimonial-letters .letter::after {
+                width: 28px;
+                height: 28px;
+                bottom: 16px;
+                right: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -151,12 +180,7 @@
     <header class="sticky-top bg-white">
         <nav class="navbar navbar-expand-custom container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
-                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
-                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
-                </svg>
-                <span>Inkwell</span>
+                <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="brand-lockup">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
@@ -337,7 +361,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
-                    <span class="footer-logo">Inkwell</span>
+                    <div class="footer-brand">
+                        <img src="assets/images/logo-lockup.svg" alt="Inkwell" class="footer-logo-img">
+                    </div>
                     <div class="d-flex gap-3">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>

@@ -171,4 +171,101 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateDialogue('start');
     }
+
+    const projectTitle = document.getElementById('project-title');
+    if (projectTitle) {
+        const projectGenre = document.getElementById('project-genre');
+        const projectRole = document.getElementById('project-role');
+        const projectChallenge = document.getElementById('project-challenge');
+        const projectSolution = document.getElementById('project-solution');
+        const systemCaption = document.getElementById('system-caption');
+        const systemNodes = [
+            document.getElementById('system-node-1'),
+            document.getElementById('system-node-2'),
+            document.getElementById('system-node-3'),
+            document.getElementById('system-node-4')
+        ];
+        const galleryItems = [
+            document.getElementById('gallery-item-1'),
+            document.getElementById('gallery-item-2'),
+            document.getElementById('gallery-item-3'),
+            document.getElementById('gallery-item-4')
+        ];
+
+        const projects = {
+            aether: {
+                title: "Aether's Fall",
+                genre: 'Epic Fantasy RPG',
+                role: 'Lead Narrative Designer @ Ironbound Interactive',
+                challenge: 'The client needed a narrative system that could support 40+ hours of gameplay while maintaining consistent character arcs across hundreds of player choices. The world required a deep sense of history and factional conflict that felt systemic rather than scripted.',
+                solution: 'I architected a modular branching system where player choices were tracked across three main narrative pillars: Morality, Faction Loyalty, and Personal Relationships. This allowed for dynamic dialogue barks and quest variations that felt tailored to each player’s unique journey.',
+                nodes: ['Player Choice', 'Faction State', 'Dialogue Variants', 'Quest Outcome'],
+                caption: 'A simplified visualization of the branching logic used in the main campaign.',
+                gallery: ['Lore Bible Map Excerpt', 'Dialogue Script Snippet', 'Quest Flow Chart', 'Character Design Sheet']
+            },
+            neon: {
+                title: 'Neon Syndicate',
+                genre: 'Cyberpunk Narrative Sim',
+                role: 'Senior Writer @ Cyberia Labs',
+                challenge: 'NPC interactions felt transactional—players exhausted dialogue options and moved on, with little sense of relationship shift or continuity. The team needed character depth without bloating production time.',
+                solution: 'I built a voice-tone guide system and relationship-based dialogue framework so conversations could adapt to trust, fear, and loyalty. This created repeatable character logic that scaled across the cast.',
+                nodes: ['First Contact', 'Relationship State', 'Tone Shift', 'New Choice Set'],
+                caption: 'A simplified view of how relationship state drives dialogue tone and options.',
+                gallery: ['Voice Tone Guide Page', 'Branching Dialogue Sample', 'Bark Library Excerpt', 'Relationship Matrix']
+            },
+            echoes: {
+                title: 'Echoes of Eldoria',
+                genre: 'Tactical Strategy',
+                role: 'Lore Architect @ Mythos Games',
+                challenge: 'The world history was fragmented across multiple writers and documents, creating contradictions in factions, geography, and timeline events. This risked rework as content scaled.',
+                solution: 'I consolidated canon into a searchable lore bible with timeline rules, faction doctrine, and “canon locks” that prevented contradictions. Writers could ship faster with fewer continuity breaks.',
+                nodes: ['Canon Rule', 'Timeline Event', 'Faction Doctrine', 'Quest Beat'],
+                caption: 'A simplified view of how canon locks keep the timeline and factions consistent.',
+                gallery: ['Timeline Sheet Excerpt', 'Faction Doctrine Page', 'Location Canon Card', 'Quest Continuity Checklist']
+            },
+            breach: {
+                title: 'The Final Breach',
+                genre: 'Sci-Fi Horror',
+                role: 'Narrative Designer @ Dark Meridian',
+                challenge: 'The story needed to stay terrifying while still giving players agency—choices had to matter without reducing tension or breaking pacing in high-stakes sequences.',
+                solution: 'I wrote scene-by-scene escalation beats with moral consequence hooks and designed an adaptive “pressure” system so dialogue and encounters reacted to player decisions without losing horror momentum.',
+                nodes: ['Signal', 'Pressure Level', 'Moral Choice', 'Survival Outcome'],
+                caption: 'A simplified view of how pressure and choices reshape scenes and outcomes.',
+                gallery: ['Scene Escalation Board', 'Choice Consequence Map', 'Horror Tone Guide', 'Adaptive Encounter Notes']
+            },
+            starfall: {
+                title: 'Starfall Station',
+                genre: 'Sci-Fi Live-Ops',
+                role: 'Narrative Systems Writer',
+                challenge: 'Seasonal updates shipped fast, but story continuity kept breaking between patches. Players also needed meaningful callbacks that acknowledged what they had already done.',
+                solution: 'I created a modular season framework with recap payloads, state rules, and reusable beat templates. This kept the live narrative coherent while still reacting to player progress.',
+                nodes: ['Season Beat', 'Player State', 'Recap Payload', 'Content Drop'],
+                caption: 'A simplified view of season beats, state rules, and recap payloads.',
+                gallery: ['Season Beat Template', 'Recap Payload Example', 'Live Ops Timeline', 'Hub Dialogue Rotation']
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const key = (params.get('project') || 'aether').toLowerCase();
+        const data = projects[key] || projects.aether;
+
+        projectTitle.textContent = data.title;
+        if (projectGenre) projectGenre.textContent = data.genre;
+        if (projectRole) projectRole.textContent = data.role;
+        if (projectChallenge) projectChallenge.textContent = data.challenge;
+        if (projectSolution) projectSolution.textContent = data.solution;
+        if (systemCaption) systemCaption.textContent = data.caption;
+        systemNodes.forEach((nodeEl, idx) => {
+            if (!nodeEl) return;
+            nodeEl.textContent = data.nodes[idx] || '';
+            nodeEl.style.display = data.nodes[idx] ? '' : 'none';
+        });
+        galleryItems.forEach((itemEl, idx) => {
+            if (!itemEl) return;
+            itemEl.textContent = data.gallery[idx] || '';
+            itemEl.style.display = data.gallery[idx] ? '' : 'none';
+        });
+
+        document.title = `${data.title} | Inkwell`;
+    }
 });
