@@ -1,0 +1,134 @@
+/* Inkwell - Dark Mode */
+:root {
+    --dark-bg: #1A1A1A;
+    --dark-card: #2A2A2A;
+    --dark-border: rgba(255,255,255,0.1);
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: #FFF;
+}
+
+body, header, footer, section, .card, .game-card, .skill-tag, .sample-folder, .service-card, .offcanvas, input, textarea, select {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode header {
+    background-color: var(--dark-bg) !important;
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+    color: #FFF !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    color: var(--accent-amber) !important;
+}
+
+body.dark-mode .navbar-toggler {
+    background-color: var(--accent-amber);
+    border: none;
+}
+
+body.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+body.dark-mode a:hover {
+    color: var(--accent-amber);
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #FFF;
+    color: var(--dark-bg);
+    border-color: #FFF;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #FFF;
+    color: var(--dark-bg);
+    border-color: #FFF;
+}
+
+body.dark-mode footer {
+    background-color: #000;
+}
+
+body.dark-mode section {
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.dark-mode .bg-light {
+    background-color: var(--dark-bg) !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .offcanvas {
+    background-color: var(--dark-card);
+    color: #FFF;
+}
+
+body.dark-mode .game-card {
+    background-color: var(--dark-card);
+    color: #FFF;
+}
+
+body.dark-mode .skill-tag {
+    background-color: var(--dark-card);
+    border-color: #444;
+    border-bottom-color: #333;
+    color: #FFF;
+}
+
+body.dark-mode .sample-folder {
+    background-color: var(--dark-card);
+    border-color: #444;
+    color: #FFF;
+}
+
+body.dark-mode .service-card {
+    background-color: var(--dark-card);
+    border-color: #444;
+    color: #FFF;
+}
+
+body.dark-mode .comparison-table td {
+    border-color: var(--dark-border);
+    color: #FFF;
+}
+
+body.dark-mode .comparison-table tr:hover td {
+    background-color: var(--dark-card);
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: var(--dark-card);
+    color: #FFF;
+    border-color: var(--dark-border);
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    background-color: #333;
+    color: #FFF;
+    border-color: var(--accent-amber);
+}
+
+/* Ensure sections with fixed backgrounds maintain their text color */
+.hero-section, .hero-v2, .dialogue-ui, .voice-gallery, .conversion-cta {
+    color: #FFF !important;
+}
+
+.hero-section h1, .hero-v2 h1, .dialogue-ui h2, .voice-gallery h2, .conversion-cta h2 {
+    color: #FFF !important;
+}
+
+.hero-section p, .hero-v2 p, .dialogue-ui p, .voice-gallery p, .conversion-cta p {
+    color: rgba(255,255,255,0.8) !important;
+}

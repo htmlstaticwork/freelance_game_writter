@@ -1,0 +1,175 @@
+/* Inkwell - Main Style Sheet */@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+:root {
+    --primary-black: #000;
+    --primary-white: #FFF;
+    --accent-amber: #C75B39;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    font-family: var(--font-body);
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.5;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body, header, footer, section, .card, .game-card, .skill-tag, .sample-folder, .service-card, .offcanvas, input, textarea, select {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: clamp(20px, 4vh, 40px);
+}
+
+h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; }
+h2 { font-size: clamp(28px, 4vw, 36px); line-height: 1.2; }
+h3 { font-size: clamp(24px, 3vw, 28px); line-height: 1.2; }
+
+a {
+    color: var(--accent-amber);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--primary-black);
+}
+
+.btn-primary {
+    background-color: var(--accent-amber);
+    border-color: var(--accent-amber);
+    color: var(--primary-white);
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 0;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-black);
+    border-color: var(--primary-black);
+    color: var(--primary-white);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-amber);
+    color: var(--accent-amber);
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 0;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-amber);
+    color: var(--primary-white);
+}
+
+/* Header & Navigation */
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--primary-black) !important;
+}
+
+.nav-link {
+    color: var(--primary-black) !important;
+    font-weight: 600;
+    margin: 0 15px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-amber) !important;
+}
+
+/* Responsive Navigation */
+@media (max-width: 1100px) {
+    .navbar-expand-custom .navbar-collapse {
+        display: none !important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: block !important;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: column;
+    }
+    .navbar-expand-custom .d-flex-desktop {
+        display: none !important; /* Hide desktop specific CTAs */
+    }
+    .navbar-brand {
+        margin: 0 auto !important; /* Center logo on mobile */
+    }
+    .theme-controls-mobile {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 1050;
+    }
+}
+
+@media (min-width: 1101px) {
+    .navbar-expand-custom .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none !important;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+/* Section Spacing */
+section {
+    padding: clamp(60px, 10vh, 100px) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.container {
+    max-width: 1300px;
+    padding-left: clamp(15px, 5vw, 40px);
+    padding-right: clamp(15px, 5vw, 40px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 60px 0 20px;
+}
+
+footer a {
+    color: var(--primary-white);
+}
+
+footer a:hover {
+    color: var(--accent-amber);
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Utilities */
+.text-accent { color: var(--accent-amber) !important; }
+.bg-accent { background-color: var(--accent-amber) !important; }
+.text-fixed-white { color: #FFF !important; }
+.text-fixed-black { color: #000 !important; }

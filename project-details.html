@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Inkwell</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* Project Details specific styles */
+        .project-hero {
+            padding: 120px 0 80px;
+            background: var(--primary-black);
+            color: #FFF;
+        }
+
+        .system-diagram {
+            background: #F9F9F9;
+            padding: 50px;
+            border: 2px dashed var(--accent-amber);
+            position: relative;
+        }
+
+        .node {
+            padding: 15px;
+            background: #FFF;
+            border: 2px solid var(--primary-black);
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+        }
+
+        .node::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: var(--accent-amber);
+            right: -22px;
+            top: 50%;
+        }
+
+        .node:last-child::after { display: none; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: #EEE;
+            border: 1px solid #DDD;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #999;
+        }
+
+        body.dark-mode .system-diagram {
+            background: #2A2A2A;
+        }
+
+        body.dark-mode .node {
+            background: #000;
+            color: #FFF;
+            border-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="sticky-top bg-white">
+        <nav class="navbar navbar-expand-custom container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
+                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
+                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
+                </svg>
+                <span>Inkwell</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center d-flex-desktop">
+                <a href="contact.html" class="btn btn-primary me-3">Request Quote</a>
+            </div>
+
+            <div class="theme-controls theme-controls-mobile">
+                <button id="theme-toggle" class="btn btn-link text-dark p-0 me-3"><i id="theme-icon" class="bi bi-moon-stars-fill"></i></button>
+                <button id="rtl-toggle" class="btn btn-link text-dark p-0">RTL</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 1: Project Hero -->
+    <section class="project-hero text-center">
+        <div class="container">
+            <h1 class="mb-3">Aether's Fall</h1>
+            <p class="text-uppercase tracking-widest text-accent mb-2">Epic Fantasy RPG</p>
+            <p class="lead">Lead Narrative Designer @ Ironbound Interactive</p>
+        </div>
+    </section>
+
+    <!-- Section 2: The Challenge & Solution -->
+    <section class="container">
+        <div class="row g-5">
+            <div class="col-md-6">
+                <h2 class="mb-4">The Challenge</h2>
+                <p>The client needed a narrative system that could support 40+ hours of gameplay while maintaining consistent character arcs across hundreds of player choices. The world required a deep sense of history and factional conflict that felt systemic rather than scripted.</p>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4">The Solution</h2>
+                <p>I architected a modular branching system where player choices were tracked across three main narrative pillars: Morality, Faction Loyalty, and Personal Relationships. This allowed for dynamic dialogue barks and quest variations that felt tailored to each player's unique journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Narrative Systems -->
+    <section class="bg-light">
+        <div class="container">
+            <h2>Narrative Systems</h2>
+            <div class="system-diagram mx-auto text-center" style="max-width: 800px;">
+                <div class="node">Choice A</div>
+                <div class="node">Consequence X</div>
+                <div class="node">New Dialogue Node</div>
+                <div class="node">Quest Outcome</div>
+                <p class="mt-4 small text-muted">A simplified visualization of the branching logic used in the main campaign.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Gallery -->
+    <section class="container">
+        <h2>Gallery & Artifacts</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">Lore Bible Map Excerpt</div>
+            <div class="gallery-item">Dialogue Script Snippet</div>
+            <div class="gallery-item">Quest Flow Chart</div>
+            <div class="gallery-item">Character Design Sheet</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <span class="footer-logo">Inkwell</span>
+                    <div class="d-flex gap-3">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-palette"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Narrative Samples</a></li>
+                        <li><a href="#">Lore Bible Template</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Newsletter</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email">
+                            <button class="btn btn-primary">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-0">© 2026 Inkwell. All rights reserved.</p>
+                <button id="back-to-top" class="btn btn-primary btn-sm"><i class="bi bi-arrow-up"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

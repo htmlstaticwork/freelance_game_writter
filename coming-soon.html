@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chapter Loading | Inkwell</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .coming-soon-page {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #1A1A1A;
+            color: #FFF;
+            padding: 20px;
+        }
+        .countdown-timer {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            color: var(--accent-amber);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-page container-fluid">
+        <div class="container">
+            <h1 class="mb-4">New Chapter Loading...</h1>
+            <p class="lead mb-4">A new narrative world is being architected. Stay tuned for the release.</p>
+            <div id="countdown" class="countdown-timer">
+                30:00:00:00
+            </div>
+            <div class="mx-auto" style="max-width: 500px;">
+                <form class="mb-5">
+                    <div class="input-group">
+                        <input type="email" class="form-control rounded-0 p-3" placeholder="Enter your email for updates">
+                        <button class="btn btn-primary px-4">Notify Me</button>
+                    </div>
+                </form>
+                <div class="d-flex justify-content-center gap-4">
+                    <a href="#" class="text-white fs-2"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white fs-2"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="text-white fs-2"><i class="bi bi-palette"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple countdown logic
+        const countdownElement = document.getElementById('countdown');
+        let days = 30;
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+
+        function updateCountdown() {
+            if (seconds > 0) {
+                seconds--;
+            } else if (minutes > 0) {
+                minutes--;
+                seconds = 59;
+            } else if (hours > 0) {
+                hours--;
+                minutes = 59;
+                seconds = 59;
+            } else if (days > 0) {
+                days--;
+                hours = 23;
+                minutes = 59;
+                seconds = 59;
+            }
+            countdownElement.innerText = 
+                `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

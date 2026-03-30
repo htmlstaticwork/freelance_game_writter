@@ -1,0 +1,64 @@
+/* Inkwell - RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .navbar-brand {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+[dir="rtl"] .navbar-toggler {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+[dir="rtl"] .nav-link {
+    margin: 0 0 0 15px;
+}
+
+[dir="rtl"] .footer-logo {
+    text-align: right;
+}
+
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+[dir="rtl"] .float-start {
+    float: right !important;
+}
+
+[dir="rtl"] .float-end {
+    float: left !important;
+}
+
+[dir="rtl"] .btn i {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .form-check {
+    padding-left: 0;
+    padding-right: 1.5em;
+}
+
+[dir="rtl"] .form-check .form-check-input {
+    float: right;
+    margin-right: -1.5em;
+}

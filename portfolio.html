@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Inkwell</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* Portfolio-specific styles */
+        .project-thumbnail {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: #000;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid var(--primary-black);
+            transition: 0.3s;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-amber);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            opacity: 0;
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateY(100%);
+        }
+
+        .project-thumbnail:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-thumbnail:hover {
+            border-color: var(--accent-amber);
+        }
+
+        .sample-folder {
+            background: #FFF9E5;
+            border: 2px solid #E6D7A8;
+            border-left: 10px solid var(--accent-amber);
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--primary-black);
+        }
+
+        .sample-folder:hover {
+            transform: translateX(10px);
+            background: var(--accent-amber);
+            color: #FFF;
+            border-color: var(--accent-amber);
+        }
+
+        .folder-icon {
+            font-size: 2rem;
+            margin-right: 20px;
+        }
+
+        body.dark-mode .sample-folder {
+            background: #2A2A2A;
+            border-color: #444;
+            color: #FFF;
+        }
+
+        body.dark-mode .sample-folder:hover {
+            background: var(--accent-amber);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="sticky-top bg-white">
+        <nav class="navbar navbar-expand-custom container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
+                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
+                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
+                </svg>
+                <span>Inkwell</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center d-flex-desktop">
+                <a href="contact.html" class="btn btn-primary me-3">Request Quote</a>
+            </div>
+
+            <div class="theme-controls theme-controls-mobile">
+                <button id="theme-toggle" class="btn btn-link text-dark p-0 me-3"><i id="theme-icon" class="bi bi-moon-stars-fill"></i></button>
+                <button id="rtl-toggle" class="btn btn-link text-dark p-0">RTL</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 1: Project Grid -->
+    <section class="container">
+        <h2>The Archive</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                    <div class="p-4">
+                        <h3>Aether's Fall</h3>
+                        <p class="text-uppercase small tracking-widest">Epic Fantasy RPG</p>
+                    </div>
+                    <div class="project-overlay">
+                        <h4>Lead Narrative Designer</h4>
+                        <p>World-building, Branching Dialogue, Quest Logic</p>
+                        <span class="btn btn-primary btn-sm">View Case Study</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                    <div class="p-4">
+                        <h3>Neon Syndicate</h3>
+                        <p class="text-uppercase small tracking-widest">Cyberpunk Narrative Sim</p>
+                    </div>
+                    <div class="project-overlay">
+                        <h4>Senior Writer</h4>
+                        <p>Dialogue, Barks, Item Descriptions</p>
+                        <span class="btn btn-primary btn-sm">View Case Study</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                    <div class="p-4">
+                        <h3>Echoes of Eldoria</h3>
+                        <p class="text-uppercase small tracking-widest">Tactical Strategy</p>
+                    </div>
+                    <div class="project-overlay">
+                        <h4>Lore Architect</h4>
+                        <p>Lore Bible, Faction History, Timeline Design</p>
+                        <span class="btn btn-primary btn-sm">View Case Study</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="project-details.html" class="project-thumbnail text-decoration-none">
+                    <div class="p-4">
+                        <h3>The Final Breach</h3>
+                        <p class="text-uppercase small tracking-widest">Sci-Fi Horror</p>
+                    </div>
+                    <div class="project-overlay">
+                        <h4>Narrative Designer</h4>
+                        <p>Scriptwriting, Scene Staging, Moral Consequences</p>
+                        <span class="btn btn-primary btn-sm">View Case Study</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Writing Samples -->
+    <section class="bg-light">
+        <div class="container">
+            <h2>Writing Samples</h2>
+            <div class="row g-4 mx-auto" style="max-width: 800px;">
+                <div class="col-12">
+                    <a href="#" class="sample-folder">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-folder-fill folder-icon"></i>
+                            <div>
+                                <h4 class="mb-1">Lore Bible Excerpt: "The Shattered Isles"</h4>
+                                <p class="mb-0 small">PDF | 15 Pages | World-building & Factions</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-download"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <a href="#" class="sample-folder">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-folder-fill folder-icon"></i>
+                            <div>
+                                <h4 class="mb-1">Dialogue Script: "The Neon Syndicate"</h4>
+                                <p class="mb-0 small">PDF | 22 Pages | Branching Conversation Sample</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-download"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <a href="#" class="sample-folder">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-folder-fill folder-icon"></i>
+                            <div>
+                                <h4 class="mb-1">Quest Design Doc: "Echoes of Eldoria"</h4>
+                                <p class="mb-0 small">PDF | 10 Pages | Quest Structure & Flow</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <span class="footer-logo">Inkwell</span>
+                    <div class="d-flex gap-3">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-palette"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Narrative Samples</a></li>
+                        <li><a href="#">Lore Bible Template</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Newsletter</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email">
+                            <button class="btn btn-primary">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-0">© 2026 Inkwell. All rights reserved.</p>
+                <button id="back-to-top" class="btn btn-primary btn-sm"><i class="bi bi-arrow-up"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

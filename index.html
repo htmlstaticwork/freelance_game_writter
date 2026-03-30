@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkwell | Narrative Architect & Game Writer</title>
+    <meta name="description" content="Portfolio of Inkwell, a professional game writer and narrative designer specializing in AAA branching narratives and world-building.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <style>
+        /* Home-specific styles */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle, #1A1A1A 0%, #000 100%);
+            color: #FFF;
+            position: relative;
+        }
+
+        .typewriter-container {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            max-width: 800px;
+        }
+
+        .shipped-titles-rail {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .shipped-titles-rail::-webkit-scrollbar {
+            display: none;
+        }
+
+        .game-card {
+            flex: 0 0 clamp(280px, 30vw, 400px);
+            scroll-snap-align: start;
+            border: 2px solid var(--accent-amber);
+            padding: clamp(20px, 3vw, 40px);
+            transition: 0.3s;
+            background: var(--primary-white);
+            color: var(--primary-black);
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            background: var(--accent-amber);
+            color: #FFF;
+            transform: translateY(-10px);
+        }
+
+        .dialogue-ui {
+            background: #000;
+            color: #FFF;
+            padding: 40px;
+            border: 4px solid var(--accent-amber);
+            border-radius: 8px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dialogue-text {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .writer-edge-split {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .edge-side {
+            flex: 1;
+            padding: 60px;
+            min-width: 300px;
+        }
+
+        .edge-left {
+            background: #F4F4F4;
+            color: #666;
+        }
+
+        .edge-right {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            border-left: 4px solid var(--accent-amber);
+        }
+
+        .testimonial-letters {
+            position: relative;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter {
+            position: absolute;
+            width: 300px;
+            padding: 30px;
+            background: #FFF9E5;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #DDD;
+            transition: 0.5s;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .letter::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-amber);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .letter:nth-child(1) { transform: rotate(-8deg) translate(-100px, -40px); z-index: 1; }
+        .letter:nth-child(2) { transform: rotate(5deg) translate(80px, 20px); z-index: 2; }
+        .letter:nth-child(3) { transform: rotate(-4deg) translate(-20px, 60px); z-index: 3; }
+        .letter:nth-child(4) { transform: rotate(6deg) translate(40px, 100px); z-index: 4; }
+
+        .letter:hover {
+            z-index: 10;
+            transform: scale(1.1) rotate(0deg) translateY(-20px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="sticky-top bg-white">
+        <nav class="navbar navbar-expand-custom container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 100 100" class="me-2">
+                    <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+                    <path d="M40 70 L60 70" fill="none" stroke="currentColor" stroke-width="4"/>
+                    <circle cx="50" cy="40" r="5" fill="currentColor"/>
+                </svg>
+                <span>Inkwell</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center d-flex-desktop">
+                <a href="contact.html" class="btn btn-primary me-3">Request Quote</a>
+            </div>
+
+            <div class="theme-controls theme-controls-mobile">
+                <button id="theme-toggle" class="btn btn-link text-dark p-0 me-3"><i id="theme-icon" class="bi bi-moon-stars-fill"></i></button>
+                <button id="rtl-toggle" class="btn btn-link text-dark p-0">RTL</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 1: Cinematic Opening -->
+    <section class="hero-section p-0 text-fixed-white">
+        <div class="container">
+            <div id="typewriter" class="typewriter-container mx-auto" data-text="Every great game begins with a great story."></div>
+            <a href="#titles" class="btn btn-primary mt-5 px-5 py-3">Enter the Archive</a>
+        </div>
+    </section>
+
+    <!-- Section 2: Shipped Titles Rail -->
+    <section id="titles" class="container">
+        <h2 class="mb-5 text-center">Shipped Titles</h2>
+        <div class="shipped-titles-rail">
+            <div class="game-card">
+                <h3>Aether's Fall</h3>
+                <p><strong>Studio:</strong> Ironbound Interactive</p>
+                <p><strong>Role:</strong> Lead Narrative Designer</p>
+                <p>Architected the 40-hour branching campaign and faction loyalty systems.</p>
+            </div>
+            <div class="game-card">
+                <h3>Neon Syndicate</h3>
+                <p><strong>Studio:</strong> Cyberia Labs</p>
+                <p><strong>Role:</strong> Senior Writer</p>
+                <p>Wrote 12,000+ lines of character-driven dialogue and environmental barks.</p>
+            </div>
+            <div class="game-card">
+                <h3>Echoes of Eldoria</h3>
+                <p><strong>Studio:</strong> Mythos Games</p>
+                <p><strong>Role:</strong> Lore Architect</p>
+                <p>Designed the 500-page world-building bible and historical timelines.</p>
+            </div>
+            <div class="game-card">
+                <h3>The Final Breach</h3>
+                <p><strong>Studio:</strong> Orbital Studios</p>
+                <p><strong>Role:</strong> Narrative Designer</p>
+                <p>Developed the dynamic quest system and moral consequence engine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Interactive Dialogue System -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="mb-5 text-center">Interactive Dialogue</h2>
+            <div class="dialogue-ui mx-auto text-fixed-white" style="max-width: 800px;">
+                <div id="dialogue-content">
+                    <!-- JS will populate this -->
+                </div>
+                <div id="dialogue-choices" class="mt-4">
+                    <!-- JS will populate this -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: The Writer's Edge (Comparison) -->
+    <section class="p-0">
+        <div class="writer-edge-split">
+            <div class="edge-side edge-left">
+                <h3 class="mb-4">Generic Narrative</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="bi bi-x-circle-fill text-danger me-2"></i> Static dialogue trees</li>
+                    <li class="mb-3"><i class="bi bi-x-circle-fill text-danger me-2"></i> Bullet point world-building</li>
+                    <li class="mb-3"><i class="bi bi-x-circle-fill text-danger me-2"></i> One-size-fits-all tone</li>
+                    <li><i class="bi bi-x-circle-fill text-danger me-2"></i> Linear quest structures</li>
+                </ul>
+            </div>
+            <div class="edge-side edge-right">
+                <h3 class="mb-4">Architected Storytelling</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-accent me-2"></i> Dynamic consequence logic</li>
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-accent me-2"></i> Systemic lore integration</li>
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-accent me-2"></i> Character-specific voice tones</li>
+                    <li><i class="bi bi-check-circle-fill text-accent me-2"></i> Emergent narrative systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Narrative Testimonials & Impact -->
+    <section class="container py-5">
+        <div class="row align-items-center">
+            <!-- Testimonials Column -->
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <h2>Testimonials</h2>
+                <div class="testimonial-letters mx-auto" style="max-width: 600px;">
+                    <div class="letter">
+                        <p>"Inkwell transformed our flat world into a living, breathing universe."</p>
+                        <strong>— Game Director, Ironbound</strong>
+                    </div>
+                    <div class="letter">
+                        <p>"The dialogue system designed by Inkwell is the highlight of our game."</p>
+                        <strong>— Lead Dev, Cyberia</strong>
+                    </div>
+                    <div class="letter">
+                        <p>"A master of lore and branching logic. Simply the best in the industry."</p>
+                        <strong>— Producer, Mythos Games</strong>
+                    </div>
+                    <div class="letter">
+                        <p>"Every script was delivered with precision and deep narrative insight."</p>
+                        <strong>— Creative Lead, Orbital</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Narrative Impact Column (New Section to fill the gap) -->
+            <div class="col-lg-5">
+                <div class="p-5 border-start border-4 border-accent bg-light text-center">
+                    <h3>Narrative Impact</h3>
+                    <div class="mb-5">
+                        <span class="display-4 d-block text-accent fw-bold">1M+</span>
+                        <span class="text-uppercase small tracking-widest fw-bold">Words Architected</span>
+                    </div>
+                    <div class="mb-5">
+                        <span class="display-4 d-block text-accent fw-bold">4</span>
+                        <span class="text-uppercase small tracking-widest fw-bold">Shipped AAA Titles</span>
+                    </div>
+                    <div class="mb-5">
+                        <span class="display-4 d-block text-accent fw-bold">12k+</span>
+                        <span class="text-uppercase small tracking-widest fw-bold">Lines of Dialogue</span>
+                    </div>
+                    <div>
+                        <span class="display-4 d-block text-accent fw-bold">10+</span>
+                        <span class="text-uppercase small tracking-widest fw-bold">Years of Industry Craft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <span class="footer-logo">Inkwell</span>
+                    <div class="d-flex gap-3">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-palette"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Narrative Samples</a></li>
+                        <li><a href="#">Lore Bible Template</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Newsletter</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email">
+                            <button class="btn btn-primary">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-0">© 2026 Inkwell. All rights reserved.</p>
+                <button id="back-to-top" class="btn btn-primary btn-sm"><i class="bi bi-arrow-up"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
