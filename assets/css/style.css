@@ -330,3 +330,55 @@ body.dark-mode .contact-link {
 .bg-accent { background-color: var(--accent-amber) !important; }
 .text-fixed-white { color: #FFF !important; }
 .text-fixed-black { color: #000 !important; }
+
+/* Image Icons */
+.icon-img {
+    height: 1.2em;
+    width: auto;
+    vertical-align: -0.2em;
+    display: inline-block;
+}
+
+.icon-md {
+    height: 2rem;
+}
+
+.icon-lg {
+    height: 3rem;
+}
+
+.icon-xl {
+    height: 4rem;
+}
+
+/* Page Specific Hero Enhancements */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg') center/cover no-repeat !important;
+}
+
+.hero-v2 {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero-v2-bg.jpg') center/cover no-repeat !important;
+}
+
+.project-hero {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/hero-bg.jpg') center/cover no-repeat !important;
+    background-attachment: fixed;
+}
+
+.bg-hud {
+    background-image: url('../images/pattern-hud.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+}
+
+/* Project Thumbnail Styling */
+.project-thumbnail {
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+#back-to-top .icon-img {
+    height: 1em;
+    filter: brightness(0) invert(1); /* Keep it white on the button */
+}

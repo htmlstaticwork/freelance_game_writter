@@ -22,7 +22,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: radial-gradient(circle, #1A1A1A 0%, #000 100%);
             color: #FFF;
             position: relative;
         }
@@ -239,25 +238,25 @@
     <section id="titles" class="container">
         <h2 class="mb-5 text-center">Shipped Titles</h2>
         <div class="shipped-titles-rail">
-            <div class="game-card">
+            <div class="game-card" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/images/game-aether.jpg'); background-size: cover;">
                 <h3>Aether's Fall</h3>
                 <p><strong>Studio:</strong> Ironbound Interactive</p>
                 <p><strong>Role:</strong> Lead Narrative Designer</p>
                 <p>Architected the 40-hour branching campaign and faction loyalty systems.</p>
             </div>
-            <div class="game-card">
+            <div class="game-card" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/images/game-neon.jpg'); background-size: cover;">
                 <h3>Neon Syndicate</h3>
                 <p><strong>Studio:</strong> Cyberia Labs</p>
                 <p><strong>Role:</strong> Senior Writer</p>
                 <p>Wrote 12,000+ lines of character-driven dialogue and environmental barks.</p>
             </div>
-            <div class="game-card">
+            <div class="game-card" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/images/game-echoes.jpg'); background-size: cover;">
                 <h3>Echoes of Eldoria</h3>
                 <p><strong>Studio:</strong> Mythos Games</p>
                 <p><strong>Role:</strong> Lore Architect</p>
                 <p>Designed the 500-page world-building bible and historical timelines.</p>
             </div>
-            <div class="game-card">
+            <div class="game-card" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/images/game-breach.jpg'); background-size: cover;">
                 <h3>The Final Breach</h3>
                 <p><strong>Studio:</strong> Orbital Studios</p>
                 <p><strong>Role:</strong> Narrative Designer</p>
@@ -267,7 +266,7 @@
     </section>
 
     <!-- Section 3: Interactive Dialogue System -->
-    <section class="bg-light">
+    <section class="bg-light bg-hud">
         <div class="container">
             <h2 class="mb-5 text-center">Interactive Dialogue</h2>
             <div class="dialogue-ui mx-auto text-fixed-white" style="max-width: 800px;">
@@ -287,19 +286,19 @@
             <div class="edge-side edge-left">
                 <h3 class="mb-4">Generic Narrative</h3>
                 <ul class="list-unstyled">
-                    <li class="mb-3"><i class="bi bi-x-circle-fill text-danger me-2"></i> Static dialogue trees</li>
-                    <li class="mb-3"><i class="bi bi-x-circle-fill text-danger me-2"></i> Bullet point world-building</li>
-                    <li class="mb-3"><i class="bi bi-x-circle-fill text-danger me-2"></i> One-size-fits-all tone</li>
-                    <li><i class="bi bi-x-circle-fill text-danger me-2"></i> Linear quest structures</li>
+                    <li class="mb-3"><img src="assets/images/x-circle.svg" alt="Icon" class="icon-img me-2"> Static dialogue trees</li>
+                    <li class="mb-3"><img src="assets/images/x-circle.svg" alt="Icon" class="icon-img me-2"> Bullet point world-building</li>
+                    <li class="mb-3"><img src="assets/images/x-circle.svg" alt="Icon" class="icon-img me-2"> One-size-fits-all tone</li>
+                    <li><img src="assets/images/x-circle.svg" alt="Icon" class="icon-img me-2"> Linear quest structures</li>
                 </ul>
             </div>
             <div class="edge-side edge-right">
                 <h3 class="mb-4">Architected Storytelling</h3>
                 <ul class="list-unstyled">
-                    <li class="mb-3"><i class="bi bi-check-circle-fill text-accent me-2"></i> Dynamic consequence logic</li>
-                    <li class="mb-3"><i class="bi bi-check-circle-fill text-accent me-2"></i> Systemic lore integration</li>
-                    <li class="mb-3"><i class="bi bi-check-circle-fill text-accent me-2"></i> Character-specific voice tones</li>
-                    <li><i class="bi bi-check-circle-fill text-accent me-2"></i> Emergent narrative systems</li>
+                    <li class="mb-3"><img src="assets/images/check-circle.svg" alt="Icon" class="icon-img me-2"> Dynamic consequence logic</li>
+                    <li class="mb-3"><img src="assets/images/check-circle.svg" alt="Icon" class="icon-img me-2"> Systemic lore integration</li>
+                    <li class="mb-3"><img src="assets/images/check-circle.svg" alt="Icon" class="icon-img me-2"> Character-specific voice tones</li>
+                    <li><img src="assets/images/check-circle.svg" alt="Icon" class="icon-img me-2"> Emergent narrative systems</li>
                 </ul>
             </div>
         </div>
@@ -399,7 +398,7 @@
             <hr class="mt-5 mb-4">
             <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-0">© 2026 Inkwell. All rights reserved.</p>
-                <button id="back-to-top" class="btn btn-primary btn-sm"><i class="bi bi-arrow-up"></i></button>
+                <button id="back-to-top" class="btn btn-primary btn-sm"><img src="assets/images/arrow-up.svg" alt="Top" class="icon-img"></button>
             </div>
         </div>
     </footer>
