@@ -61,6 +61,18 @@ body.dark-mode .btn-secondary:hover {
     border-color: #FFF;
 }
 
+body.dark-mode .btn-outline-dark {
+    color: #FFF;
+    border-color: rgba(255,255,255,0.35);
+}
+
+body.dark-mode .btn-outline-dark:hover,
+body.dark-mode .btn-outline-dark:focus {
+    background-color: #FFF;
+    color: var(--dark-bg);
+    border-color: #FFF;
+}
+
 body.dark-mode footer {
     background-color: #000;
 }
@@ -79,9 +91,25 @@ body.dark-mode .offcanvas {
     color: #FFF;
 }
 
+body.dark-mode .offcanvas .nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    border-bottom-color: rgba(255,255,255,0.12);
+}
+
+body.dark-mode .offcanvas .nav-link:hover {
+    background-color: rgba(199, 91, 57, 0.18);
+    color: #FFF !important;
+}
+
 body.dark-mode .game-card {
     background-color: var(--dark-card);
     color: #FFF;
+}
+
+body.dark-mode .shipped-titles-rail .game-card,
+body.dark-mode .shipped-titles-rail .game-card:hover,
+body.dark-mode .shipped-titles-rail .game-card:focus {
+    color: #111;
 }
 
 body.dark-mode .skill-tag {

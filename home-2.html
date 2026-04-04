@@ -17,13 +17,15 @@
     <style>
         /* Home 2 specific styles */
         .hero-v2 {
-            height: 100vh;
+            min-height: 100vh;
+            min-height: 100svh;
             color: #FFF;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
+            padding: clamp(72px, 10vh, 120px) 16px;
         }
 
         .hero-v2::after {
@@ -338,6 +340,27 @@
         }
 
         @media (max-width: 575px) {
+            .hero-v2 {
+                align-items: flex-start;
+                padding: 96px 16px 72px;
+            }
+
+            .hero-tagline {
+                font-size: 0.95rem;
+                letter-spacing: 0.25rem;
+                margin-bottom: 14px;
+            }
+
+            .hero-title {
+                font-size: clamp(2.2rem, 10vw, 3.1rem);
+                margin-bottom: 18px;
+            }
+
+            .hero-v2 .lead {
+                font-size: 1.05rem;
+                margin-bottom: 28px !important;
+            }
+
             .blueprint-steps {
                 grid-template-columns: 1fr;
             }
@@ -404,7 +427,7 @@
             </div>
 
             <div class="d-flex align-items-center d-flex-desktop">
-                <a href="contact.html" class="btn btn-primary me-3">Request Quote</a>
+                <a href="login.html" class="btn btn-primary me-3">Login</a>
             </div>
 
             <div class="theme-controls theme-controls-mobile">
@@ -428,6 +451,9 @@
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item mt-3">
+                    <a class="btn btn-primary w-100" href="login.html">Login</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -703,7 +729,7 @@
     </section>
 
     <!-- Section 4: Narrative Toolkit -->
-    <section class="py-5 bg-hud">
+    <section class="py-5 bg-light bg-hud">
         <div class="container">
             <div class="row align-items-end mb-5">
                 <div class="col-lg-8">

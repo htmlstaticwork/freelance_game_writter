@@ -53,6 +53,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const currentPage = (() => {
+        const page = window.location.pathname.split('/').pop();
+        return page && page.length > 0 ? page : 'index.html';
+    })();
+
+    function setActiveNavLinks(containerSelector) {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+
+        const links = Array.from(container.querySelectorAll('a.nav-link[href]'));
+        links.forEach(link => {
+            const href = (link.getAttribute('href') || '').split('#')[0].split('?')[0];
+            const isActive = href === currentPage;
+            link.classList.toggle('active', isActive);
+            if (isActive) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    setActiveNavLinks('header');
+    setActiveNavLinks('#mobileNav');
+
     // Typewriter effect (for index.html)
     const typewriter = document.getElementById('typewriter');
     if (typewriter) {
@@ -125,33 +150,33 @@ document.addEventListener('DOMContentLoaded', () => {
             start: {
                 text: "Ah, another seeker of stories. What kind of narrative architecture are you looking for?",
                 choices: [
-                    { text: "Branching Dialogue", next: "branching" },
-                    { text: "Lore Systems", next: "lore" },
-                    { text: "Character Arcs", next: "characters" }
+                    { text: "Branching", next: "branching" },
+                    { text: "Lore", next: "lore" },
+                    { text: "Characters", next: "characters" }
                 ]
             },
             branching: {
                 text: "Interactive narratives require choices with consequence. My scripts are built to handle multiple player paths without losing thematic focus.",
                 choices: [
-                    { text: "Tell me about lore.", next: "lore" },
-                    { text: "Let's talk characters.", next: "characters" },
-                    { text: "Back to start.", next: "start" }
+                    { text: "Lore", next: "lore" },
+                    { text: "Characters", next: "characters" },
+                    { text: "Restart", next: "start" }
                 ]
             },
             lore: {
                 text: "A world without history is just a set. I build lore bibles that establish logic, factions, and timelines that feel lived-in.",
                 choices: [
-                    { text: "How about dialogue?", next: "branching" },
-                    { text: "Character design?", next: "characters" },
-                    { text: "Back to start.", next: "start" }
+                    { text: "Dialogue", next: "branching" },
+                    { text: "Characters", next: "characters" },
+                    { text: "Restart", next: "start" }
                 ]
             },
             characters: {
                 text: "Characters are the heart of any game. I design backstories and voice tones that resonate with players.",
                 choices: [
-                    { text: "Dialogue trees?", next: "branching" },
-                    { text: "Lore systems?", next: "lore" },
-                    { text: "Back to start.", next: "start" }
+                    { text: "Dialogue", next: "branching" },
+                    { text: "Lore", next: "lore" },
+                    { text: "Restart", next: "start" }
                 ]
             }
         };
@@ -162,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dialogueChoices.innerHTML = '';
             step.choices.forEach(choice => {
                 const btn = document.createElement('button');
-                btn.className = 'btn btn-secondary m-1';
+                btn.className = 'btn btn-secondary dialogue-choice-btn';
                 btn.innerText = choice.text;
                 btn.onclick = () => updateDialogue(choice.next);
                 dialogueChoices.appendChild(btn);
