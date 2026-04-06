@@ -293,4 +293,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.title = `${data.title} | Inkwell`;
     }
+
+    // Password Visibility Toggle
+    const passwordToggles = document.querySelectorAll('.password-toggle');
+    passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const container = toggle.closest('.password-field-container');
+            const input = container ? container.querySelector('input') : null;
+            if (input) {
+                const isPassword = input.type === 'password';
+                input.type = isPassword ? 'text' : 'password';
+                toggle.classList.toggle('bi-eye', !isPassword);
+                toggle.classList.toggle('bi-eye-slash', isPassword);
+            }
+        });
+    });
 });

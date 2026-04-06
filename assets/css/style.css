@@ -464,3 +464,88 @@ body.dark-mode .contact-link:focus-visible {
     height: 1.15rem;
     width: 1.15rem;
 }
+/* Password Visibility Toggle */
+.password-field-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    color: var(--primary-black);
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.password-toggle:hover {
+    opacity: 1;
+}
+
+[dir="rtl"] .password-toggle {
+    right: auto;
+    left: 12px;
+}
+
+/* Social Logins */
+.social-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+    color: var(--primary-black);
+    opacity: 0.4;
+}
+
+.social-separator::before,
+.social-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid currentColor;
+}
+
+.social-separator:not(:empty)::before {
+    margin-right: 12px;
+}
+
+.social-separator:not(:empty)::after {
+    margin-left: 12px;
+}
+
+.social-login-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: transparent;
+    color: var(--primary-black);
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.btn-social:hover {
+    background-color: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.2);
+    color: var(--accent-amber);
+}
+
+body.dark-mode .btn-social {
+    border-color: rgba(255,255,255,0.1);
+    color: var(--primary-white);
+}
+
+body.dark-mode .btn-social:hover {
+    background-color: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.2);
+}
