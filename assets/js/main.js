@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('mouseenter', () => {
                 titlesSection.style.transition = '0.5s';
                 titlesSection.style.background = artBackgrounds[index % artBackgrounds.length];
+                titlesSection.classList.add('is-hovered');
                 // If it's dark mode, we might want to keep it subtle
                 if (document.body.classList.contains('dark-mode')) {
                     titlesSection.style.opacity = '0.9';
@@ -137,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('mouseleave', () => {
                 titlesSection.style.background = '';
                 titlesSection.style.opacity = '1';
+                titlesSection.classList.remove('is-hovered');
             });
         });
     }
