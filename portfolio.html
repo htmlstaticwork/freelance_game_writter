@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Inkwell</title>
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Custom Styles -->
@@ -151,7 +157,7 @@
         <h2>The Archive</h2>
         <div class="row g-4">
             <div class="col-md-6">
-                <a href="project-details.html?project=aether" class="project-thumbnail text-decoration-none" style="background-image: url('assets/images/game-aether.png');">
+                <a href="project-details.html?project=aether" class="project-thumbnail text-decoration-none lazy-bg" data-bg="assets/images/game-aether.png">
                     <div class="p-4">
                         <h3>Aether's Fall</h3>
                         <p class="text-uppercase small tracking-widest text-fixed-white">Epic Fantasy RPG</p>
@@ -164,7 +170,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="project-details.html?project=neon" class="project-thumbnail text-decoration-none" style="background-image: url('assets/images/game-neon.png');">
+                <a href="project-details.html?project=neon" class="project-thumbnail text-decoration-none lazy-bg" data-bg="assets/images/game-neon.png">
                     <div class="p-4">
                         <h3>Neon Syndicate</h3>
                         <p class="text-uppercase small tracking-widest text-fixed-white">Cyberpunk Narrative Sim</p>
@@ -177,7 +183,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="project-details.html?project=echoes" class="project-thumbnail text-decoration-none" style="background-image: url('assets/images/game-echoes.png');">
+                <a href="project-details.html?project=echoes" class="project-thumbnail text-decoration-none lazy-bg" data-bg="assets/images/game-echoes.png">
                     <div class="p-4">
                         <h3>Echoes of Eldoria</h3>
                         <p class="text-uppercase small tracking-widest text-fixed-white">Tactical Strategy</p>
@@ -190,7 +196,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="project-details.html?project=breach" class="project-thumbnail text-decoration-none" style="background-image: url('assets/images/game-breach.png');">
+                <a href="project-details.html?project=breach" class="project-thumbnail text-decoration-none lazy-bg" data-bg="assets/images/game-breach.png">
                     <div class="p-4">
                         <h3>The Final Breach</h3>
                         <p class="text-uppercase small tracking-widest text-fixed-white">Sci-Fi Horror</p>
@@ -213,37 +219,37 @@
                 <div class="col-12">
                     <a href="#" class="sample-folder">
                         <div class="d-flex align-items-center">
-                        <img src="assets/images/folder.svg" alt="Folder" class="icon-img icon-md folder-icon">
+                        <img src="assets/images/folder.svg" alt="Folder" class="icon-img icon-md folder-icon" loading="lazy" decoding="async">
                             <div>
                                 <h4 class="mb-1">Lore Bible Excerpt: "The Shattered Isles"</h4>
                                 <p class="mb-0 small">PDF | 15 Pages | World-building & Factions</p>
                             </div>
                         </div>
-                        <img src="assets/images/download.svg" alt="Download" class="icon-img">
+                        <img src="assets/images/download.svg" alt="Download" class="icon-img" loading="lazy" decoding="async">
                     </a>
                 </div>
                 <div class="col-12">
                     <a href="#" class="sample-folder">
                         <div class="d-flex align-items-center">
-                        <img src="assets/images/folder.svg" alt="Folder" class="icon-img icon-md folder-icon">
+                        <img src="assets/images/folder.svg" alt="Folder" class="icon-img icon-md folder-icon" loading="lazy" decoding="async">
                             <div>
                                 <h4 class="mb-1">Dialogue Script: "The Neon Syndicate"</h4>
                                 <p class="mb-0 small">PDF | 22 Pages | Branching Conversation Sample</p>
                             </div>
                         </div>
-                        <img src="assets/images/download.svg" alt="Download" class="icon-img">
+                        <img src="assets/images/download.svg" alt="Download" class="icon-img" loading="lazy" decoding="async">
                     </a>
                 </div>
                 <div class="col-12">
                     <a href="#" class="sample-folder">
                         <div class="d-flex align-items-center">
-                        <img src="assets/images/folder.svg" alt="Folder" class="icon-img icon-md folder-icon">
+                        <img src="assets/images/folder.svg" alt="Folder" class="icon-img icon-md folder-icon" loading="lazy" decoding="async">
                             <div>
                                 <h4 class="mb-1">Quest Design Doc: "Echoes of Eldoria"</h4>
                                 <p class="mb-0 small">PDF | 10 Pages | Quest Structure & Flow</p>
                             </div>
                         </div>
-                        <img src="assets/images/download.svg" alt="Download" class="icon-img">
+                        <img src="assets/images/download.svg" alt="Download" class="icon-img" loading="lazy" decoding="async">
                     </a>
                 </div>
             </div>
@@ -293,7 +299,7 @@
             <hr class="mt-5 mb-4">
             <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-0">© 2026 Inkwell. All rights reserved.</p>
-                <button id="back-to-top" class="btn btn-primary btn-sm"><img src="assets/images/arrow-up.svg" alt="Top" class="icon-img"></button>
+                <button id="back-to-top" class="btn btn-primary btn-sm"><img src="assets/images/arrow-up.svg" alt="Top" class="icon-img" loading="lazy" decoding="async"></button>
             </div>
         </div>
     </footer>

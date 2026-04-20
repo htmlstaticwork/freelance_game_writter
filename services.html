@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Inkwell</title>
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Custom Styles -->
@@ -178,9 +184,9 @@
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="service-card">
-                    <img src="assets/images/gallery-flow.jpg" alt="Flowchart-style image representing branching dialogue structure" class="service-thumb">
+                    <img src="assets/images/gallery-flow.jpg" alt="Flowchart-style image representing branching dialogue structure" class="service-thumb" loading="lazy" decoding="async">
                     <div class="service-card-header">
-                        <img src="assets/images/chat-dots.svg" alt="Icon" class="icon-img icon-lg service-icon">
+                        <img src="assets/images/chat-dots.svg" alt="Icon" class="icon-img icon-lg service-icon" loading="lazy" decoding="async">
                         <h3>Branching Dialogue</h3>
                     </div>
                     <p>Designing complex dialogue systems that react to player choice, reputation, and inventory. Delivered in Twine, Ink, or custom formats.</p>
@@ -188,9 +194,9 @@
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <img src="assets/images/gallery-map.jpg" alt="World map image representing lore and world-building" class="service-thumb">
+                    <img src="assets/images/gallery-map.jpg" alt="World map image representing lore and world-building" class="service-thumb" loading="lazy" decoding="async">
                     <div class="service-card-header">
-                        <img src="assets/images/book.svg" alt="Icon" class="icon-img icon-lg service-icon">
+                        <img src="assets/images/book.svg" alt="Icon" class="icon-img icon-lg service-icon" loading="lazy" decoding="async">
                         <h3>Lore Bible Creation</h3>
                     </div>
                     <p>Building comprehensive world foundations. Factions, timelines, mythologies, and cultural nuances established in a searchable database.</p>
@@ -198,9 +204,9 @@
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <img src="assets/images/profile-inkwell.jpg" alt="Portrait image representing character profiles and voice" class="service-thumb">
+                    <img src="assets/images/profile-inkwell.jpg" alt="Portrait image representing character profiles and voice" class="service-thumb" loading="lazy" decoding="async">
                     <div class="service-card-header">
-                        <img src="assets/images/person-badge.svg" alt="Icon" class="icon-img icon-lg service-icon">
+                        <img src="assets/images/person-badge.svg" alt="Icon" class="icon-img icon-lg service-icon" loading="lazy" decoding="async">
                         <h3>Character Arc Design</h3>
                     </div>
                     <p>Developing character profiles, motivations, and growth trajectories. Includes unique voice tone guides and dialogue samples.</p>
@@ -208,9 +214,9 @@
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <img src="assets/images/game-neon.jpg" alt="Futuristic game scene representing in-game barks and NPC reactions" class="service-thumb">
+                    <img src="assets/images/game-neon.jpg" alt="Futuristic game scene representing in-game barks and NPC reactions" class="service-thumb" loading="lazy" decoding="async">
                     <div class="service-card-header">
-                        <img src="assets/images/megaphone.svg" alt="Icon" class="icon-img icon-lg service-icon">
+                        <img src="assets/images/megaphone.svg" alt="Icon" class="icon-img icon-lg service-icon" loading="lazy" decoding="async">
                         <h3>In-Game Barks</h3>
                     </div>
                     <p>Writing systemic combat and environmental barks that breathe life into NPCs without repetitive fatigue.</p>
@@ -218,9 +224,9 @@
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <img src="assets/images/game-aether.png" alt="Fantasy game artwork representing quest design and narrative flow" class="service-thumb">
+                    <img src="assets/images/game-aether.png" alt="Fantasy game artwork representing quest design and narrative flow" class="service-thumb" loading="lazy" decoding="async">
                     <div class="service-card-header">
-                        <img src="assets/images/compass.svg" alt="Icon" class="icon-img icon-lg service-icon">
+                        <img src="assets/images/compass.svg" alt="Icon" class="icon-img icon-lg service-icon" loading="lazy" decoding="async">
                         <h3>Quest Design</h3>
                     </div>
                     <p>Creating quest structures that balance narrative flow with mechanical goals. From main campaigns to emergent side quests.</p>
@@ -228,9 +234,9 @@
             </div>
             <div class="col-md-6">
                 <div class="service-card">
-                    <img src="assets/images/gallery-script.jpg" alt="Script page image representing narrative consultation and story structure" class="service-thumb">
+                    <img src="assets/images/gallery-script.jpg" alt="Script page image representing narrative consultation and story structure" class="service-thumb" loading="lazy" decoding="async">
                     <div class="service-card-header">
-                        <img src="assets/images/vr.svg" alt="Icon" class="icon-img icon-lg service-icon">
+                        <img src="assets/images/vr.svg" alt="Icon" class="icon-img icon-lg service-icon" loading="lazy" decoding="async">
                         <h3>World-Building Consultation</h3>
                     </div>
                     <p>High-level narrative strategy for early-stage projects. Refining core themes and establishing narrative pillars.</p>
@@ -327,7 +333,7 @@
             <hr class="mt-5 mb-4">
             <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-0">© 2026 Inkwell. All rights reserved.</p>
-                <button id="back-to-top" class="btn btn-primary btn-sm"><img src="assets/images/arrow-up.svg" alt="Top" class="icon-img"></button>
+                <button id="back-to-top" class="btn btn-primary btn-sm"><img src="assets/images/arrow-up.svg" alt="Top" class="icon-img" loading="lazy" decoding="async"></button>
             </div>
         </div>
     </footer>

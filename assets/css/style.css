@@ -1,5 +1,5 @@
 /* Inkwell - Main Style Sheet */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
 
 :root {
     --primary-black: #000;
@@ -478,8 +478,14 @@ body.dark-mode .contact-link:focus-visible {
     background-attachment: fixed;
 }
 
-.bg-hud {
+.bg-hud:not(.lazy-bg) {
     background-image: url('../images/pattern-hud.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    position: relative;
+}
+.bg-hud {
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: overlay;
@@ -588,6 +594,10 @@ body.dark-mode .contact-link:focus-visible {
 }
 
 /* Project Thumbnail Styling */
+.project-thumbnail:not(.lazy-bg) {
+    background-size: cover !important;
+    background-position: center !important;
+}
 .project-thumbnail {
     background-size: cover !important;
     background-position: center !important;

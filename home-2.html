@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inkwell Forge | Narrative Architect - Home 2</title>
     <meta name="description" content="Portfolio of Inkwell Forge, a professional game writer and narrative designer specializing in AAA branching narratives and world-building.">
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical Hero image -->
+    <link rel="preload" as="image" href="assets/images/hero-v2-bg.jpg">
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Custom Styles -->
@@ -472,12 +481,10 @@
     <!-- Section 2: Narrative Blueprint -->
     <section class="bg-light py-5">
         <div class="container">
-            <div class="row align-items-end mb-5">
-                <div class="col-lg-8">
+            <div class="row mb-5 text-center">
+                <div class="col-12">
                     <h2 class="mb-3">Narrative Blueprint</h2>
-                    <p class="lead mb-0">A clear, repeatable pipeline that turns a premise into playable story systems.</p>
-                </div>
-                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <p class="lead mb-3">A clear, repeatable pipeline that turns a premise into playable story systems.</p>
                     <a href="services.html" class="btn btn-outline-dark">See Engagement Models</a>
                 </div>
             </div>
@@ -508,12 +515,10 @@
 
     <!-- Section 3: Case Studies -->
     <section class="container py-5">
-        <div class="row align-items-end mb-4">
-            <div class="col-lg-8">
+        <div class="row mb-4 text-center">
+            <div class="col-12">
                 <h2 class="mb-2">Case Studies</h2>
-                <p class="lead mb-0">Select a project to see the problem, the approach, and the shipped solution.</p>
-            </div>
-            <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+                <p class="lead mb-3">Select a project to see the problem, the approach, and the shipped solution.</p>
                 <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
             </div>
         </div>
@@ -727,17 +732,17 @@
     </section>
 
     <!-- Section 4: Narrative Toolkit -->
-    <section class="py-5 bg-light bg-hud">
+    <section class="py-5 bg-light bg-hud lazy-bg" data-bg="assets/images/pattern-hud.png">
         <div class="container">
-            <div class="row align-items-end mb-5">
-                <div class="col-lg-8">
+            <div class="row mb-5 text-center">
+                <div class="col-12">
                     <h2 class="mb-3">Narrative Toolkit</h2>
                     <p class="lead mb-0">Practical deliverables that teams can ship with—designed to plug into production.</p>
                 </div>
             </div>
             <div class="toolkit-grid">
                 <div class="toolkit-card">
-                    <img src="assets/images/book.svg" alt="Icon" class="icon-img icon-md toolkit-icon">
+                    <img src="assets/images/book.svg" alt="Icon" class="icon-img icon-md toolkit-icon" loading="lazy" decoding="async">
                     <h3 class="h4 mb-2">Lore Bible</h3>
                     <p class="mb-3">Rules, factions, timeline, and canon locks that prevent contradictions across seasons.</p>
                     <div class="toolkit-actions">
@@ -745,7 +750,7 @@
                     </div>
                 </div>
                 <div class="toolkit-card">
-                    <img src="assets/images/diagram.svg" alt="Icon" class="icon-img icon-md toolkit-icon">
+                    <img src="assets/images/diagram.svg" alt="Icon" class="icon-img icon-md toolkit-icon" loading="lazy" decoding="async">
                     <h3 class="h4 mb-2">Quest Logic</h3>
                     <p class="mb-3">Flags, dependencies, and fail-states written like engineering specs—not vague beats.</p>
                     <div class="toolkit-actions">
@@ -753,7 +758,7 @@
                     </div>
                 </div>
                 <div class="toolkit-card">
-                    <img src="assets/images/chat-left-text.svg" alt="Icon" class="icon-img icon-md toolkit-icon">
+                    <img src="assets/images/chat-left-text.svg" alt="Icon" class="icon-img icon-md toolkit-icon" loading="lazy" decoding="async">
                     <h3 class="h4 mb-2">Dialogue Trees</h3>
                     <p class="mb-3">Branching conversations built around player intent, relationship shifts, and pacing.</p>
                     <div class="toolkit-actions">
@@ -761,7 +766,7 @@
                     </div>
                 </div>
                 <div class="toolkit-card">
-                    <img src="assets/images/person-lines.svg" alt="Icon" class="icon-img icon-md toolkit-icon">
+                    <img src="assets/images/person-lines.svg" alt="Icon" class="icon-img icon-md toolkit-icon" loading="lazy" decoding="async">
                     <h3 class="h4 mb-2">Voice Guides</h3>
                     <p class="mb-3">Tone rules, vocabulary, and character do/don’t lists that keep writing consistent.</p>
                     <div class="toolkit-actions">
@@ -860,7 +865,7 @@
             <hr class="mt-5 mb-4">
             <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-0">© 2026 Inkwell. All rights reserved.</p>
-                <button id="back-to-top" class="btn btn-primary btn-sm"><img src="assets/images/arrow-up.svg" alt="Top" class="icon-img"></button>
+                <button id="back-to-top" class="btn btn-primary btn-sm"><img src="assets/images/arrow-up.svg" alt="Top" class="icon-img" loading="lazy" decoding="async"></button>
             </div>
         </div>
     </footer>

@@ -296,6 +296,38 @@ document.addEventListener('DOMContentLoaded', () => {
         document.title = `${data.title} | Inkwell`;
     }
 
+    // Background Image Lazy Loading
+    const lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-bg"));
+
+    if ("IntersectionObserver" in window) {
+        let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const section = entry.target;
+                    const bg = section.getAttribute('data-bg');
+                    if (bg) {
+                        section.style.backgroundImage = `url(${bg})`;
+                    }
+                    section.classList.remove("lazy-bg");
+                    lazyBackgroundObserver.unobserve(section);
+                }
+            });
+        });
+
+        lazyBackgrounds.forEach(function(lazyBackground) {
+            lazyBackgroundObserver.observe(lazyBackground);
+        });
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        lazyBackgrounds.forEach(function(section) {
+            const bg = section.getAttribute('data-bg');
+            if (bg) {
+                section.style.backgroundImage = `url(${bg})`;
+            }
+            section.classList.remove("lazy-bg");
+        });
+    }
+
     // Password Visibility Toggle
     const passwordToggles = document.querySelectorAll('.password-toggle');
     passwordToggles.forEach(toggle => {
